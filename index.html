@@ -2,20 +2,43 @@
 <html lang="en">
 
 <head>
-    <title>Click Me!</title>
+    <title>Dice</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="google-adsense-account" content="ca-pub-6893657615826552">
-
-    <style> </style>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6893657615826552"
         crossorigin="anonymous"></script>
+
+    <style>
+        .dice {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border: 2px solid black;
+            margin: 10px;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-    <button onclick="alert('Dont do that!')">Click Me!</button>
+    <div class="dice"></div>
+    <div class="dice"></div>
+    <button onclick="rollDice()">Roll Dice</button>
 </body>
+
+<script>
+    function rollDice() {
+        const dice = document.querySelectorAll('.dice');
+        dice.forEach(die => {
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            die.textContent = randomNumber;
+        });
+    }
+</script>
 
 </html>
